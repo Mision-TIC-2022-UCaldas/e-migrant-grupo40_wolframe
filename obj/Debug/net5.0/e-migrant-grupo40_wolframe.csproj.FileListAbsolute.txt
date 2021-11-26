@@ -1,0 +1,16 @@
+C:\proyectos\calentamiento\e-migrant-grupo40_wolframe\bin\Debug\net5.0\e-migrant-grupo40_wolframe.exe
+C:\proyectos\calentamiento\e-migrant-grupo40_wolframe\bin\Debug\net5.0\e-migrant-grupo40_wolframe.deps.json
+C:\proyectos\calentamiento\e-migrant-grupo40_wolframe\bin\Debug\net5.0\e-migrant-grupo40_wolframe.runtimeconfig.json
+C:\proyectos\calentamiento\e-migrant-grupo40_wolframe\bin\Debug\net5.0\e-migrant-grupo40_wolframe.runtimeconfig.dev.json
+C:\proyectos\calentamiento\e-migrant-grupo40_wolframe\bin\Debug\net5.0\e-migrant-grupo40_wolframe.dll
+C:\proyectos\calentamiento\e-migrant-grupo40_wolframe\bin\Debug\net5.0\ref\e-migrant-grupo40_wolframe.dll
+C:\proyectos\calentamiento\e-migrant-grupo40_wolframe\bin\Debug\net5.0\e-migrant-grupo40_wolframe.pdb
+C:\proyectos\calentamiento\e-migrant-grupo40_wolframe\obj\Debug\net5.0\e-migrant-grupo40_wolframe.csproj.AssemblyReference.cache
+C:\proyectos\calentamiento\e-migrant-grupo40_wolframe\obj\Debug\net5.0\e-migrant-grupo40_wolframe.GeneratedMSBuildEditorConfig.editorconfig
+C:\proyectos\calentamiento\e-migrant-grupo40_wolframe\obj\Debug\net5.0\e-migrant-grupo40_wolframe.AssemblyInfoInputs.cache
+C:\proyectos\calentamiento\e-migrant-grupo40_wolframe\obj\Debug\net5.0\e-migrant-grupo40_wolframe.AssemblyInfo.cs
+C:\proyectos\calentamiento\e-migrant-grupo40_wolframe\obj\Debug\net5.0\e-migrant-grupo40_wolframe.csproj.CoreCompileInputs.cache
+C:\proyectos\calentamiento\e-migrant-grupo40_wolframe\obj\Debug\net5.0\e-migrant-grupo40_wolframe.dll
+C:\proyectos\calentamiento\e-migrant-grupo40_wolframe\obj\Debug\net5.0\ref\e-migrant-grupo40_wolframe.dll
+C:\proyectos\calentamiento\e-migrant-grupo40_wolframe\obj\Debug\net5.0\e-migrant-grupo40_wolframe.pdb
+C:\proyectos\calentamiento\e-migrant-grupo40_wolframe\obj\Debug\net5.0\e-migrant-grupo40_wolframe.genruntimeconfig.cache

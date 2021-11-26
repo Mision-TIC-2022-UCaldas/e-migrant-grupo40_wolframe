@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "e-migrant-grupo40_wolframe/1.0.0": {
+        "runtime": {
+          "e-migrant-grupo40_wolframe.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "e-migrant-grupo40_wolframe/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
