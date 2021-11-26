@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\HENCKER\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\HENCKER\\.nuget\\packages"
+      "C:\\Users\\natal\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\natal\\.nuget\\packages"
     ]
   }
 }

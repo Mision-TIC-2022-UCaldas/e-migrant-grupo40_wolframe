@@ -14,7 +14,7 @@ namespace e_migrant_grupo40_wolframe
             Console.WriteLine("peso ={0}", peso);
             Console.WriteLine("ingresa tu altura en metros: ");
             altura = float.Parse(Console.ReadLine());
-            Console.WriteLine("peso ={0}", altura);
+            Console.WriteLine("altura ={0}", altura);
 
             double IMC = peso / (altura * altura);
             Console.WriteLine("tu IMC es ={0}", IMC);
