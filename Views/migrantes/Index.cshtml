@@ -1,0 +1,87 @@
+﻿@model IEnumerable<proyecto.Models.migrantes>
+@{
+    ViewData["Title"] = "lista";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    @if (TempData["mensaje"]!=null)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            @TempData["mensaje"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+
+    }
+    <div class="row">
+        <div class="col-sm-6">
+           <h3>lista de inmigrantes</h3>
+        </div>
+        <div class="col-sm-6">
+            <a class="btn btn-success d-block" asp-action="Create" asp-controller="migrantes">agregar migrantes</a>
+        </div>
+    </div>
+    <div class="row">
+        @if(Model.Count()>0)
+        {
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <td>@Html.DisplayNameFor(m => m.Id)</td>
+                        <td>@Html.DisplayNameFor(m => m.Nombre)</td>
+                        <td>@Html.DisplayNameFor(m => m.Apellidos)</td>
+                        <td>@Html.DisplayNameFor(m => m.Tipodoc)</td>
+                        <td>@Html.DisplayNameFor(m => m.Documento)</td>
+                        <td>@Html.DisplayNameFor(m => m.Pais)</td>
+                        <td>@Html.DisplayNameFor(m => m.Fecha_nacimiento)</td>
+                        <td>@Html.DisplayNameFor(m => m.Correo)</td>
+                        <td>@Html.DisplayNameFor(m => m.Telefono)</td>
+                        <td>@Html.DisplayNameFor(m => m.Direccion)</td>
+                        <td>@Html.DisplayNameFor(m => m.Ciudad)</td>
+                        <td>@Html.DisplayNameFor(m => m.Situacionlaboral)</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                   {
+                       <tr>
+                         <td>@item.Id</td>
+                        <td>@item.Nombre</td>
+                        <td>@item.Apellidos</td>
+                        <td>@item.Tipodoc</td>
+                        <td>@item.Documento</td>
+                        <td>@item.Pais</td>
+                        <td>@item.Fecha_nacimiento</td>
+                        <td>@item.Correo</td>
+                        <td>@item.Telefono</td>
+                        <td>@item.Direccion</td>
+                        <td>@item.Ciudad</td>
+                        <td>@item.Situacionlaboral</td>
+                        <td>
+                            <a asp-controller="migrantes" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">editar</a>
+                            <a asp-controller="migrantes" asp-action="delete"asp-route-id="@item.Id" class="btn alert-danger">eliminar</a>
+                        </td>
+
+                       </tr>
+                       
+                   }
+                </tbody>
+
+            </table>
+        }else
+            {
+                <p>no existen paises</p>
+            }
+
+    </div>
+
+
+
+
+
+
+</div>
+
