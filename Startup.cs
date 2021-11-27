@@ -1,4 +1,5 @@
 using login2.Data;
+using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -35,6 +36,17 @@ namespace login2
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
+
+            services.AddAuthentication()
+            .AddGoogle(googleOptions =>
+             {
+
+
+                 googleOptions.ClientId = Configuration["Authentication:Google:ClientId"];
+                 googleOptions.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
+             });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

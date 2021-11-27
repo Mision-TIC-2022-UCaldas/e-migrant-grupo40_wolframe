@@ -441,3 +441,11 @@ C:\Users\mateo\source\repos\login2\obj\Debug\net5.0\Razor\Views\migrantes\Delete
 C:\Users\mateo\source\repos\login2\obj\Debug\net5.0\Razor\Views\migrantes\Details.cshtml.g.cs
 C:\Users\mateo\source\repos\login2\obj\Debug\net5.0\Razor\Views\migrantes\Edit.cshtml.g.cs
 C:\Users\mateo\source\repos\login2\obj\Debug\net5.0\Razor\Views\migrantes\Index.cshtml.g.cs
+C:\Users\mateo\source\repos\login2\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.Google.dll
+C:\Users\mateo\source\repos\login2\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\ExternalLogin.cshtml.g.cs
+C:\Users\mateo\source\repos\login2\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\ExternalLogins.cshtml.g.cs
+C:\Users\mateo\source\repos\login2\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml.g.cs
+C:\Users\mateo\source\repos\login2\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml.g.cs
+C:\Users\mateo\source\repos\login2\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
+C:\Users\mateo\source\repos\login2\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\mateo\source\repos\login2\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
