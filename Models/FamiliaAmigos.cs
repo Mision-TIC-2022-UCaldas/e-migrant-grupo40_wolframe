@@ -1,9 +1,10 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace proyecto.Models
 {
-    public class FamiliaAmigos
+   public class FamiliaAmigos
     {
         [Key]
         public int Id { get; set; } 
@@ -29,7 +30,7 @@ namespace proyecto.Models
         public string TipoAfinidad { get; set; }
         [Required]
         public int IdMigrantes { get; set; }
-        [Required]
+        [ForeignKey("Id")]
         public migrantes Migrantes { get; set; }
 
 

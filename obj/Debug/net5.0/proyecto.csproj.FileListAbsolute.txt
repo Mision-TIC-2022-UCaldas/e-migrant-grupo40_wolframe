@@ -443,3 +443,6 @@ C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\Entidads\Delet
 C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\Entidads\Details.cshtml.g.cs
 C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\Entidads\Edit.cshtml.g.cs
 C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\Entidads\Index.cshtml.g.cs
+C:\Users\HENCKER\Source\Repos\e-migrant-grupo40_wolframe\obj\Debug\net5.0\proyecto.dll
+C:\Users\HENCKER\Source\Repos\e-migrant-grupo40_wolframe\obj\Debug\net5.0\ref\proyecto.dll
+C:\Users\HENCKER\Source\Repos\e-migrant-grupo40_wolframe\obj\Debug\net5.0\proyecto.pdb
