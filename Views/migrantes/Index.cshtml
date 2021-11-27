@@ -42,6 +42,8 @@
                         <td>@Html.DisplayNameFor(m => m.Direccion)</td>
                         <td>@Html.DisplayNameFor(m => m.Ciudad)</td>
                         <td>@Html.DisplayNameFor(m => m.Situacionlaboral)</td>
+                        <td>@Html.DisplayNameFor(m => m.Contrasena)</td>
+                        <td>acciones</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -60,9 +62,11 @@
                         <td>@item.Direccion</td>
                         <td>@item.Ciudad</td>
                         <td>@item.Situacionlaboral</td>
+                        <td>@item.Contrasena</td>
                         <td>
                             <a asp-controller="migrantes" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">editar</a>
                             <a asp-controller="migrantes" asp-action="delete"asp-route-id="@item.Id" class="btn alert-danger">eliminar</a>
+                            <a asp-controller="migrantes" asp-action="Details"asp-route-id="@item.Id" class="btn alert-danger">detalle</a>
                         </td>
 
                        </tr>
@@ -77,6 +81,9 @@
             }
 
     </div>
+    <div class="col-sm-6">
+            <a class="btn btn-success d-block" asp-action="Index" asp-controller="FamiliaAmigos">agregar Amigos</a>
+        </div>
 
 
 

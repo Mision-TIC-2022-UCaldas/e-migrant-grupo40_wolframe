@@ -19,6 +19,104 @@ namespace proyecto.Migrations
                 .HasAnnotation("ProductVersion", "5.0.12")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("proyecto.Models.Entidad", b =>
+                {
+                    b.Property<string>("Nit")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Ciudad")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Correo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Direccion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PaginaWeb")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RazonSocial")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Sector")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Telefono")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Nit");
+
+                    b.ToTable("Entidad");
+                });
+
+            modelBuilder.Entity("proyecto.Models.FamiliaAmigos", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Apellidos")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ciudad")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Correo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Direccion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Documento")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Fecha_nacimiento")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("IdMigrantes")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MigrantesId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Pais")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Situacionlaboral")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Telefono")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TipoAfinidad")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Tipodoc")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MigrantesId");
+
+                    b.ToTable("FamiliaAmigos");
+                });
+
             modelBuilder.Entity("proyecto.Models.migrantes", b =>
                 {
                     b.Property<int>("Id")
@@ -31,6 +129,9 @@ namespace proyecto.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Ciudad")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Contrasena")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Correo")
@@ -67,6 +168,15 @@ namespace proyecto.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("migrantes");
+                });
+
+            modelBuilder.Entity("proyecto.Models.FamiliaAmigos", b =>
+                {
+                    b.HasOne("proyecto.Models.migrantes", "Migrantes")
+                        .WithMany()
+                        .HasForeignKey("MigrantesId");
+
+                    b.Navigation("Migrantes");
                 });
 #pragma warning restore 612, 618
         }

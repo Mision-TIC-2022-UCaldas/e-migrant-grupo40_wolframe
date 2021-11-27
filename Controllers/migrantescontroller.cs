@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using proyecto.Data;
 using proyecto.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace proyecto.Controllers
 {
@@ -20,6 +22,16 @@ namespace proyecto.Controllers
             IEnumerable<migrantes> lista_migrantes = _context.migrantes;
             return View(lista_migrantes);
         }
+
+        /*
+          public IActionResult GetOneMigrantes(numeroDocumento)
+        {
+            migrantes migrante = _context.migrantes.FirstOrDefault(p => p.Documento == numeroDocumento);;
+            return View(migrante);
+        }
+         
+         */
+
         public IActionResult Create()
         {
             return View();
@@ -95,6 +107,22 @@ namespace proyecto.Controllers
             
 
 
+        }
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var familiaAmigos = await _context.migrantes
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (familiaAmigos == null)
+            {
+                return NotFound();
+            }
+
+            return View(familiaAmigos);
         }
     }
 }

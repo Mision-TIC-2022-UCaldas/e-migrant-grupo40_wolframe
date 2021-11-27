@@ -11,5 +11,9 @@ namespace proyecto.Data
         }
 
         public DbSet<migrantes> migrantes { get; set; }
+
+        public DbSet<FamiliaAmigos> FamiliaAmigos { get; set; }
+
+        public DbSet<proyecto.Models.Entidad> Entidad { get; set; }
     }
 }

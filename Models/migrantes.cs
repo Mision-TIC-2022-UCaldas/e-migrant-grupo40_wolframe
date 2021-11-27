@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace proyecto.Models
@@ -23,7 +24,10 @@ namespace proyecto.Models
         public string Telefono { get; set; }
         public string Direccion { get; set; }
         public string Ciudad { get; set; }
-        public string Situacionlaboral{ get; set; }
+        public string Situacionlaboral { get; set; }
+        public string Contrasena { get; set; }
+
+
 
 
     }

@@ -432,3 +432,14 @@ C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\migrantes\Inde
 C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\migrantes\Create.cshtml.g.cs
 C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\migrantes\Edit.cshtml.g.cs
 C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\migrantes\Delete.cshtml.g.cs
+C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\FamiliaAmigos\Create.cshtml.g.cs
+C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\FamiliaAmigos\Delete.cshtml.g.cs
+C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\FamiliaAmigos\Details.cshtml.g.cs
+C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\FamiliaAmigos\Edit.cshtml.g.cs
+C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\FamiliaAmigos\Index.cshtml.g.cs
+C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\migrantes\Details.cshtml.g.cs
+C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\Entidads\Create.cshtml.g.cs
+C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\Entidads\Delete.cshtml.g.cs
+C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\Entidads\Details.cshtml.g.cs
+C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\Entidads\Edit.cshtml.g.cs
+C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\Entidads\Index.cshtml.g.cs
