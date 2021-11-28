@@ -2,7 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using proyecto.Data;
 using proyecto.Models;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace proyecto.Controllers
@@ -56,7 +58,7 @@ namespace proyecto.Controllers
                 return NotFound();
             }
             var migrante = _context.migrantes.Find(id);
-            
+
             if (migrante == null)
             {
                 return NotFound();
@@ -104,7 +106,7 @@ namespace proyecto.Controllers
 
             TempData["mensaje"] = "se ha eliminado correctamente";
             return RedirectToAction("Index");
-            
+
 
 
         }
@@ -124,5 +126,25 @@ namespace proyecto.Controllers
 
             return View(familiaAmigos);
         }
+
+        public async Task<IActionResult> Index2(string SearchString)
+        {
+            var pacientes = GetAllmigrantes(); // Obtiene todos los saludos
+            if (pacientes != null)  //Si se tienen saludos
+            {
+                if (!String.IsNullOrEmpty(SearchString))
+                {
+                    pacientes = pacientes.Where(s => s.Documento.Contains(SearchString));
+                }
+
+            }
+            return View(pacientes);
+
+        }
+        public IEnumerable<migrantes> GetAllmigrantes()
+        {
+            return _context.migrantes;
+        }
+       
     }
 }

@@ -29,8 +29,7 @@ namespace proyecto.Models
         public string TipoAfinidad { get; set; }
         [Required]
         public int IdMigrantes { get; set; }
-        [Required]
-        public migrantes Migrantes { get; set; }
+        public migrantes migrantes { get; set; }
 
 
 }

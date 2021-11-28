@@ -86,7 +86,7 @@ namespace proyecto.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Apellidos,Tipodoc,Documento,Pais,Fecha_nacimiento,Correo,Telefono,Direccion,Ciudad,Situacionlaboral,TipoAfinidad,IdMigrantes")] FamiliaAmigos familiaAmigos)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Apellidos,Tipodoc,Documento,Pais,Fecha_nacimiento,Correo,Telefono,Direccion,Ciudad,Situacionlaboral,TipoAfinidad")] FamiliaAmigos familiaAmigos)
         {
             if (id != familiaAmigos.Id)
             {

@@ -10,8 +10,8 @@ using proyecto.Data;
 namespace proyecto.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211127034804_migracion3")]
-    partial class migracion3
+    [Migration("20211128031206_v2")]
+    partial class v2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,42 @@ namespace proyecto.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.12")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("proyecto.Models.Entidad", b =>
+                {
+                    b.Property<string>("Nit")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Ciudad")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Correo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Direccion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PaginaWeb")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RazonSocial")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Sector")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Telefono")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Nit");
+
+                    b.ToTable("Entidad");
+                });
 
             modelBuilder.Entity("proyecto.Models.FamiliaAmigos", b =>
                 {

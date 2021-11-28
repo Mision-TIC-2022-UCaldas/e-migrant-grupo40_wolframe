@@ -16,6 +16,12 @@
         </div>
 
     }
+   <form asp-controller="migrantes" asp-action="Index2">
+    <p>
+        Title: <input type="text" name="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
     <div class="row">
         <div class="col-sm-6">
            <h3>lista de inmigrantes</h3>
@@ -81,9 +87,7 @@
             }
 
     </div>
-    <div class="col-sm-6">
-            <a class="btn btn-success d-block" asp-action="Index" asp-controller="FamiliaAmigos">agregar Amigos</a>
-        </div>
+    
 
 
 
