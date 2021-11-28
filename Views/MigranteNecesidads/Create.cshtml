@@ -1,0 +1,59 @@
+﻿@model proyecto.Models.MigranteNecesidad
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>MigranteNecesidad</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Necesidad" class="control-label"></label>
+                <select asp-for="Necesidad" class="form-control" >
+                 <option>Salud</option>
+                 <option>Jurídicos</option>
+                 <option>Alimentacion</option>
+                 <option>Empleo</option>
+                 <option>Alojamiento temporal</option>
+                 <option>Alojamiento Permanente</option>
+                 <option>Educación</option>
+                 
+
+                </select>
+                <span asp-validation-for="Necesidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdMigrante" class="control-label"></label>
+                <select asp-for="IdMigrante" class ="form-control" asp-items="ViewBag.IdMigrante"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Prioridad" class="control-label"></label>
+                <select asp-for="Prioridad" class="form-control">
+                 <option>Alta</option>
+                 <option>Media</option>
+                 <option>Baja</option>
+                </select>
+                <span asp-validation-for="Prioridad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Detalle" class="control-label"></label>
+                <input asp-for="Detalle" class="form-control" />
+                <span asp-validation-for="Detalle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

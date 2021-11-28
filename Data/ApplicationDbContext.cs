@@ -15,5 +15,11 @@ namespace proyecto.Data
         public DbSet<FamiliaAmigos> FamiliaAmigos { get; set; }
 
         public DbSet<proyecto.Models.Entidad> Entidad { get; set; }
+
+        public DbSet<proyecto.Models.calificarapp> calificarapp { get; set; }
+
+        public DbSet<proyecto.Models.servicios> servicios { get; set; }
+
+        public DbSet<proyecto.Models.MigranteNecesidad> MigranteNecesidad { get; set; }
     }
 }

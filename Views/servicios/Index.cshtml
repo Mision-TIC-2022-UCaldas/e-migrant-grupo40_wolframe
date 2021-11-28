@@ -1,0 +1,72 @@
+﻿@model IEnumerable<proyecto.Models.servicios>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1></h1>
+ <form asp-controller="servicios" asp-action="Index2">
+    <p>
+        Title: <input type="text" name="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<p>
+    <a asp-action="Create">Create servicio</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreServicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroPersonas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaInico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaFinal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entidad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreServicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroPersonas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaInico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaFinal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Entidad.Nit)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdServicioEntidad">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdServicioEntidad">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdServicioEntidad">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
