@@ -1,28 +1,37 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace login2.Models
 {
-    public class migrantes
-    {
+    [Table("Migrantes")]
+    public class Migrantes
+    {    
+       
         [Key]
-        public int Id { get; set; }
+        public int IdMigrante { get; set; }
         [Required]
-        public string Nombre { get; set; }
+        public string Nombres { get; set; }
         [Required]
         public string Apellidos { get; set; }
         [Required]
-        public string Tipodoc { get; set; }
+        public string Tipodocumento { get; set; }
         [Required]
-        public string Documento { get; set; }
+        public string NumeroDocumento { get; set; }
         [Required]
         public string Pais { get; set; }
         [Required]
-        public DateTime Fecha_nacimiento { get; set; }
+        public DateTime FechaNacimiento { get; set; }
         public string Correo { get; set; }
         public string Telefono { get; set; }
         public string Direccion { get; set; }
         public string Ciudad { get; set; }
-        public string Situacionlaboral { get; set; }
+        public string Situacionlaboral { get; set; }           
+        public string IdUsuario { get; set; }
+
+
+
+
+        
     }
 }

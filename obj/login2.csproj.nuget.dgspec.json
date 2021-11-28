@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mateo\\source\\repos\\login2\\login2.csproj": {}
+    "C:\\Users\\HENCKER\\source\\repos\\app\\login2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mateo\\source\\repos\\login2\\login2.csproj": {
+    "C:\\Users\\HENCKER\\source\\repos\\app\\login2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mateo\\source\\repos\\login2\\login2.csproj",
+        "projectUniqueName": "C:\\Users\\HENCKER\\source\\repos\\app\\login2.csproj",
         "projectName": "login2",
-        "projectPath": "C:\\Users\\mateo\\source\\repos\\login2\\login2.csproj",
-        "packagesPath": "C:\\Users\\mateo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mateo\\source\\repos\\login2\\obj\\",
+        "projectPath": "C:\\Users\\HENCKER\\source\\repos\\app\\login2.csproj",
+        "packagesPath": "C:\\Users\\HENCKER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HENCKER\\source\\repos\\app\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mateo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HENCKER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
