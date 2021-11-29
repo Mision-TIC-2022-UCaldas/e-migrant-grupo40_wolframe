@@ -53,6 +53,14 @@
 
                 </select>
                </div> 
+                 <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                <select asp-for="Estado" class="form-control" >
+                 <option>Habilitado</option>
+                 <option disabled>Inhabilitado</option>
+                </select>
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

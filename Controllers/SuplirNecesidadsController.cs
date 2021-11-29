@@ -61,10 +61,24 @@ namespace proyecto.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdMigranteServicio,Detalle,Fecha,IdServicioEntidad,EstadoServicios,IdMigranteNecesidad")] SuplirNecesidad suplirNecesidad)
         {
-            MigranteServicio migranteServicio = ;
             
+
             if (ModelState.IsValid)
             {
+                /*MigranteServicio migranteServicio = new MigranteServicio
+                * {Fecha=suplirNecesidad.Fecha,
+                * Detalle=EsuplirNecesidad.Detalle,
+                * IdServicioEntidad=suplirNecesidad.IdServicioEntidad
+                * EstadoServicios=suplirNecesidad.EstadoServicios,
+                * IdMigrantes=IdMigranteNecesidad};
+
+                 if(suplirNecesidad.EstadoServicios=="" || suplirNecesidad.EstadoServicios=="" )
+                   {
+                        _context.MigranteServicio.add(migranteServicio);
+                    }  
+
+                 */
+
                 _context.Add(suplirNecesidad);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

@@ -22,6 +22,7 @@ namespace proyecto.Controllers
         // GET: servicios
         public async Task<IActionResult> Index()
         {
+            //IEnumerable<servicios> query = _context.servicios.OrderByDescending(pet => pet.NumeroPersonas);
             var applicationDbContext = _context.servicios.Include(s => s.Entidad);
             return View(await applicationDbContext.ToListAsync());
         }
@@ -59,11 +60,18 @@ namespace proyecto.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdServicioEntidad,NombreServicio,NumeroPersonas,FechaInico,FechaFinal,Estado,NitEntidad")] servicios servicios)
         {
+            int resultado = DateTime.Compare(servicios.FechaInico, servicios.FechaFinal);
             if (ModelState.IsValid)
             {
-                _context.Add(servicios);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (resultado < 0) {
+                    _context.Add(servicios);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    return View();
+                }
             }
             ViewData["NitEntidad"] = new SelectList(_context.Entidad, "Nit", "Nit", servicios.NitEntidad);
             return View(servicios);
@@ -93,6 +101,8 @@ namespace proyecto.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IdServicioEntidad,NombreServicio,NumeroPersonas,FechaInico,FechaFinal,Estado,NitEntidad")] servicios servicios)
         {
+            int resultado = DateTime.Compare(servicios.FechaInico, servicios.FechaFinal);
+            int resultado2 = DateTime.Compare(DateTime.Now.Date, servicios.FechaFinal);
             if (id != servicios.IdServicioEntidad)
             {
                 return NotFound();
@@ -102,8 +112,15 @@ namespace proyecto.Controllers
             {
                 try
                 {
-                    _context.Update(servicios);
-                    await _context.SaveChangesAsync();
+                    if (resultado < 0 && resultado2 < 0)
+                    {
+                        _context.Update(servicios);
+                        await _context.SaveChangesAsync();
+                    }
+                    else
+                    {
+                        return View();
+                    }
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -125,6 +142,8 @@ namespace proyecto.Controllers
         // GET: servicios/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+          
+
             if (id == null)
             {
                 return NotFound();
@@ -146,6 +165,7 @@ namespace proyecto.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            
             var servicios = await _context.servicios.FindAsync(id);
             _context.servicios.Remove(servicios);
             await _context.SaveChangesAsync();

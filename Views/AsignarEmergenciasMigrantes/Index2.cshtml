@@ -1,16 +1,11 @@
 ﻿@model IEnumerable<proyecto.Models.AsignarEmergenciasMigrante>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Index2";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
- <form asp-controller="AsignarEmergenciasMigrantes" asp-action="Index2">
-    <p>
-        Title: <input type="text" name="SearchString" />
-        <input type="submit" value="Filter" />
-    </p>
-</form>
+<h1>Index2</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -46,12 +41,12 @@
                 @Html.DisplayFor(modelItem => item.EmergenciasMigrantes.IdEmergenciasMigrantes)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.EntidadServicioEmergencia.NombreEntidad)
+                @Html.DisplayFor(modelItem => item.EntidadServicioEmergencia.IdEntidadServicioEmergencia)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.IdAsignarEmergenciasMigrante">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.IdAsignarEmergenciasMigrante">Details</a> |
-               
+                <a asp-action="Delete" asp-route-id="@item.IdAsignarEmergenciasMigrante">Delete</a>
             </td>
         </tr>
 }

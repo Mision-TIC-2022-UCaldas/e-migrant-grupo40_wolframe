@@ -502,3 +502,4 @@ C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\MigranteServic
 C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\MigranteServicios\Details.cshtml.g.cs
 C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\MigranteServicios\Edit.cshtml.g.cs
 C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\MigranteServicios\Index.cshtml.g.cs
+C:\Users\mateo\source\repos\proyecto\obj\Debug\net5.0\Razor\Views\AsignarEmergenciasMigrantes\Index2.cshtml.g.cs

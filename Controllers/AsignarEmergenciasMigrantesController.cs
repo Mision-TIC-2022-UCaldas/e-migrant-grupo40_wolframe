@@ -162,5 +162,23 @@ namespace proyecto.Controllers
         {
             return _context.AsignarEmergenciasMigrante.Any(e => e.IdAsignarEmergenciasMigrante == id);
         }
+        public async Task<IActionResult> Index2(string SearchString)
+        {
+            var pacientes = GetAllservicios(); // Obtiene todos los saludos
+            if (pacientes != null)  //Si se tienen saludos
+            {
+                if (!String.IsNullOrEmpty(SearchString))
+                {
+                    pacientes = pacientes.Where(s => s.Estado.Contains(SearchString));
+                }
+
+            }
+            return View(pacientes);
+
+        }
+        public IEnumerable<AsignarEmergenciasMigrante> GetAllservicios()
+        {
+            return _context.AsignarEmergenciasMigrante;
+        }
     }
 }
