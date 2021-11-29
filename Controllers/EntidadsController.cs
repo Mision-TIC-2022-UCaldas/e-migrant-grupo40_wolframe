@@ -149,5 +149,35 @@ namespace proyecto.Controllers
         {
             return _context.Entidad.Any(e => e.Nit == id);
         }
+        public async Task<IActionResult> Index2(string SearchString,string Ciudad)
+        {
+            var pacientes = GetAllnovedades(); // Obtiene todos los saludos
+            if (pacientes != null)  //Si se tienen saludos
+            {
+                if (!String.IsNullOrEmpty(SearchString) && !String.IsNullOrEmpty(Ciudad))
+                {
+                    pacientes = pacientes.Where(s => s.Nit.Contains(SearchString) && s.Ciudad.Contains(Ciudad));
+                }
+                else if (!String.IsNullOrEmpty(SearchString) && String.IsNullOrEmpty(Ciudad))
+                {
+                    pacientes = pacientes.Where(s => s.Nit.Contains(SearchString) );
+                }
+                else if(String.IsNullOrEmpty(SearchString) && !String.IsNullOrEmpty(Ciudad))
+                {
+                    pacientes = pacientes.Where(s => s.Ciudad.Contains(Ciudad));
+                }
+                else if (String.IsNullOrEmpty(SearchString) && String.IsNullOrEmpty(Ciudad))
+                {
+                    return NotFound();
+                }
+
+            }
+            return View(pacientes);
+
+        }
+        public IEnumerable<Entidad> GetAllnovedades()
+        {
+            return _context.Entidad;
+        }
     }
 }

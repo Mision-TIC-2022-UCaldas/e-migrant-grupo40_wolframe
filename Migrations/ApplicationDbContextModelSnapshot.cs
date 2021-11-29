@@ -19,6 +19,68 @@ namespace proyecto.Migrations
                 .HasAnnotation("ProductVersion", "5.0.12")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("proyecto.Models.AsignarEmergenciasMigrante", b =>
+                {
+                    b.Property<int>("IdAsignarEmergenciasMigrante")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Detalle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Estado")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("IdEmergenciasMigrantes")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdEntidadEmergencia")
+                        .HasColumnType("int");
+
+                    b.HasKey("IdAsignarEmergenciasMigrante");
+
+                    b.HasIndex("IdEmergenciasMigrantes");
+
+                    b.HasIndex("IdEntidadEmergencia");
+
+                    b.ToTable("AsignarEmergenciasMigrante");
+                });
+
+            modelBuilder.Entity("proyecto.Models.EmergenciasMigrantes", b =>
+                {
+                    b.Property<int>("IdEmergenciasMigrantes")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Ciudad")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Estado")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("IdMigrante")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Tipoemergencia")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdEmergenciasMigrantes");
+
+                    b.HasIndex("IdMigrante");
+
+                    b.ToTable("EmergenciasMigrantes");
+                });
+
             modelBuilder.Entity("proyecto.Models.Entidad", b =>
                 {
                     b.Property<string>("Nit")
@@ -53,6 +115,33 @@ namespace proyecto.Migrations
                     b.HasKey("Nit");
 
                     b.ToTable("Entidad");
+                });
+
+            modelBuilder.Entity("proyecto.Models.EntidadServicioEmergencia", b =>
+                {
+                    b.Property<int>("IdEntidadServicioEmergencia")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Ciudad")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NombreEntidad")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Numero")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Tipo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdEntidadServicioEmergencia");
+
+                    b.ToTable("EntidadServicioEmergencia");
                 });
 
             modelBuilder.Entity("proyecto.Models.FamiliaAmigos", b =>
@@ -142,6 +231,102 @@ namespace proyecto.Migrations
                     b.HasIndex("IdMigrante");
 
                     b.ToTable("MigranteNecesidad");
+                });
+
+            modelBuilder.Entity("proyecto.Models.MigranteServicio", b =>
+                {
+                    b.Property<int>("IdMigranteServicio")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Detalle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EstadoServicios")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("IdMigrantes")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdServicioEntidad")
+                        .HasColumnType("int");
+
+                    b.HasKey("IdMigranteServicio");
+
+                    b.HasIndex("IdMigrantes");
+
+                    b.HasIndex("IdServicioEntidad");
+
+                    b.ToTable("MigranteServicio");
+                });
+
+            modelBuilder.Entity("proyecto.Models.Novedad", b =>
+                {
+                    b.Property<int>("IdNovedades")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Ciudad")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Detalle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("NumeroDias")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TipoUsuario")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdNovedades");
+
+                    b.ToTable("Novedades");
+                });
+
+            modelBuilder.Entity("proyecto.Models.SuplirNecesidad", b =>
+                {
+                    b.Property<int>("IdMigranteServicio")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Detalle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EstadoServicios")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("IdMigranteNecesidad")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdServicioEntidad")
+                        .HasColumnType("int");
+
+                    b.HasKey("IdMigranteServicio");
+
+                    b.HasIndex("IdMigranteNecesidad");
+
+                    b.HasIndex("IdServicioEntidad");
+
+                    b.ToTable("MigranteServicioEntidad");
                 });
 
             modelBuilder.Entity("proyecto.Models.calificarapp", b =>
@@ -258,6 +443,36 @@ namespace proyecto.Migrations
                     b.ToTable("servicios");
                 });
 
+            modelBuilder.Entity("proyecto.Models.AsignarEmergenciasMigrante", b =>
+                {
+                    b.HasOne("proyecto.Models.EmergenciasMigrantes", "EmergenciasMigrantes")
+                        .WithMany()
+                        .HasForeignKey("IdEmergenciasMigrantes")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("proyecto.Models.EntidadServicioEmergencia", "EntidadServicioEmergencia")
+                        .WithMany()
+                        .HasForeignKey("IdEntidadEmergencia")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("EmergenciasMigrantes");
+
+                    b.Navigation("EntidadServicioEmergencia");
+                });
+
+            modelBuilder.Entity("proyecto.Models.EmergenciasMigrantes", b =>
+                {
+                    b.HasOne("proyecto.Models.migrantes", "migrantes")
+                        .WithMany()
+                        .HasForeignKey("IdMigrante")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("migrantes");
+                });
+
             modelBuilder.Entity("proyecto.Models.FamiliaAmigos", b =>
                 {
                     b.HasOne("proyecto.Models.migrantes", "migrantes")
@@ -276,6 +491,44 @@ namespace proyecto.Migrations
                         .IsRequired();
 
                     b.Navigation("Migrantes");
+                });
+
+            modelBuilder.Entity("proyecto.Models.MigranteServicio", b =>
+                {
+                    b.HasOne("proyecto.Models.migrantes", "Migrantes")
+                        .WithMany()
+                        .HasForeignKey("IdMigrantes")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("proyecto.Models.servicios", "Servicios")
+                        .WithMany()
+                        .HasForeignKey("IdServicioEntidad")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Migrantes");
+
+                    b.Navigation("Servicios");
+                });
+
+            modelBuilder.Entity("proyecto.Models.SuplirNecesidad", b =>
+                {
+                    b.HasOne("proyecto.Models.MigranteNecesidad", "Migrantes")
+                        .WithMany()
+                        .HasForeignKey("IdMigranteNecesidad")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("proyecto.Models.servicios", "Servicios")
+                        .WithMany()
+                        .HasForeignKey("IdServicioEntidad")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Migrantes");
+
+                    b.Navigation("Servicios");
                 });
 
             modelBuilder.Entity("proyecto.Models.servicios", b =>

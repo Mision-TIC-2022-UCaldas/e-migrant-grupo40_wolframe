@@ -20,18 +20,15 @@ namespace proyecto.Models
         public int IdServicioEntidad { get; set; }
 
         [Required]
-        public int IdEstadoServiciosMigrante { get; set; }
+        public string EstadoServicios { get; set; }
 
         [Required]
         public int IdMigrantes { get; set; }
 
         [ForeignKey("IdMigrantes")]
-        public migrantes migrantes { get; set; }
-
-        [ForeignKey("IdEstadoServiciosMigrante")]
-        public EstadoServicioMigrante EstadoServicioMigrante { get; set; }
+        public migrantes Migrantes { get; set; }
 
         [ForeignKey("IdServicioEntidad")]
-        public ServicioEntidad ServicioEntidad { get; set; }
+        public servicios Servicios { get; set; }
     }
 }

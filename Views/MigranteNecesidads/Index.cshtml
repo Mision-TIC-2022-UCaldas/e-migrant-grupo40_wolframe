@@ -6,7 +6,21 @@
 }
 
 <h1>Index</h1>
-
+  <form asp-controller="MigranteNecesidads" asp-action="Index2">
+    <p>
+        Title: <select type="text" name="SearchString" >
+                 <option>Salud</option>
+                 <option>Jurídicos</option>
+                 <option>Alimentacion</option>
+                 <option>Empleo</option>
+                 <option>Alojamiento temporal</option>
+                 <option>Alojamiento Permanente</option>
+                 <option>Educación</option>
+        </select>
+        
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 <p>
     <a asp-action="Create">Create New</a>
 </p>

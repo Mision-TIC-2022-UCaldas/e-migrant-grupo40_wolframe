@@ -1,0 +1,49 @@
+﻿@model proyecto.Models.MigranteServicio
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>MigranteServicio</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Detalle" class="control-label"></label>
+                <input asp-for="Detalle" class="form-control" />
+                <span asp-validation-for="Detalle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fecha" class="control-label"></label>
+                <input asp-for="Fecha" class="form-control" />
+                <span asp-validation-for="Fecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdServicioEntidad" class="control-label"></label>
+                <select asp-for="IdServicioEntidad" class ="form-control" asp-items="ViewBag.IdServicioEntidad"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstadoServicios" class="control-label"></label>
+                <input asp-for="EstadoServicios" class="form-control" />
+                <span asp-validation-for="EstadoServicios" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdMigrantes" class="control-label"></label>
+                <select asp-for="IdMigrantes" class ="form-control" asp-items="ViewBag.IdMigrantes"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

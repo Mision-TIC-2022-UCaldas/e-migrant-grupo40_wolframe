@@ -1,0 +1,83 @@
+﻿@model IEnumerable<proyecto.Models.Novedad>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<form asp-controller="Novedads" asp-action="Index2">
+    <p>
+        Busqueda: <select type="text" name="SearchString" >
+                 <option>General</option>
+                 <option>Entidad</option>
+                 <option>Migrante</option>
+        </select>
+        <select type="text" name="Ciudad" >
+                 <option>Bogota</option>
+                 <option>Cali</option>
+                 <option>Medellin</option>
+                 <option>Cartagena</option>
+                 <option>Barranquilla</option>
+                 <option>Bucaramanga</option>
+                 <option>Tunja</option>
+                 <option>Manizales</option>
+                 <option>Armenia</option>
+        </select>
+        
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Detalle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroDias)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ciudad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Detalle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroDias)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ciudad)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdNovedades">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdNovedades">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdNovedades">Inhabilitar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

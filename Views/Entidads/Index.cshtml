@@ -7,12 +7,26 @@
 
 <h1>Creacion Entidades</h1>
 
+
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+<form asp-controller="Entidads" asp-action="Index2">
+
+    <p>
+        busquedaporNit: <input type="text" name="SearchString" placeholder="nit"/>
+        <input type="text" name="Ciudad" placeholder="ciudad" />
+        <input type="submit" value="Filter" />
+
+    </p>
+</form>
+
 <table class="table">
     <thead>
         <tr>
+             <th>
+                @Html.DisplayNameFor(model => model.Nit)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.RazonSocial)
             </th>
@@ -40,6 +54,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nit)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.RazonSocial)
             </td>

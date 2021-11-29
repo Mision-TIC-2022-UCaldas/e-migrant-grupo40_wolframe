@@ -156,5 +156,24 @@ namespace proyecto.Controllers
         {
             return _context.MigranteNecesidad.Any(e => e.IdMigranteNecesidad == id);
         }
+        public async Task<IActionResult> Index2(string SearchString)
+        {
+            var pacientes = GetAllnecesidades(); // Obtiene todos los saludos
+            if (pacientes != null)  //Si se tienen saludos
+            {
+                if (!String.IsNullOrEmpty(SearchString))
+                {
+                    pacientes = pacientes.Where(s => s.Necesidad.Contains(SearchString));
+                }
+
+            }
+            return View(pacientes);
+
+        }
+        public IEnumerable<MigranteNecesidad> GetAllnecesidades()
+        {
+            return _context.MigranteNecesidad;
+        }
+
     }
 }
