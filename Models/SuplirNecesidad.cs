@@ -21,8 +21,10 @@ namespace proyecto.Models
 
         [Required]
         public string EstadoServicios { get; set; }
-
         [Required]
+        public string TipoDeUsuario { get; set; }
+
+        
         public int IdMigranteNecesidad { get; set; }
 
         [ForeignKey("IdMigranteNecesidad")]

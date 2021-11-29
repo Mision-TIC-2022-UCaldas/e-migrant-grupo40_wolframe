@@ -59,10 +59,29 @@ namespace proyecto.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdMigranteServicio,Detalle,Fecha,IdServicioEntidad,EstadoServicios,IdMigrantes")] MigranteServicio migranteServicio)
+        public async Task<IActionResult> Create([Bind("IdMigranteServicio,Detalle,Fecha,IdServicioEntidad,EstadoServicios,IdMigrantes,TipoDeUsuario")] MigranteServicio migranteServicio)
         {
             if (ModelState.IsValid)
             {
+                //igranteNecesidad sp = (
+                //                    from su in _context.SuplirNecesidad
+                //                    join nm in _context.MigranteNecesidad on su.IdMigranteNecesidad equals nm.IdMigranteNecesidad
+                //                    //where nm.IdMigranteNecesidad == suplirNecesidad.IdMigranteNecesidad
+                //                    select new MigranteNecesidad()
+                //                    {
+                //                        IdMigrante = nm.IdMigrante,
+                //                        Necesidad = nm.Necesidad,
+                //                    }).FirstOrDefault();
+
+                //MigranteServicio migranteServicio = new MigranteServicio
+                //{
+                //    Fecha = suplirNecesidad.Fecha,
+                //    Detalle = suplirNecesidad.Detalle,
+                //    IdServicioEntidad = suplirNecesidad.IdServicioEntidad,
+                //    EstadoServicios = suplirNecesidad.EstadoServicios,
+                //    IdMigrantes = sp.IdMigrante
+                //};
+
                 _context.Add(migranteServicio);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -95,7 +114,7 @@ namespace proyecto.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdMigranteServicio,Detalle,Fecha,IdServicioEntidad,EstadoServicios,IdMigrantes")] MigranteServicio migranteServicio)
+        public async Task<IActionResult> Edit(int id, [Bind("IdMigranteServicio,Detalle,Fecha,IdServicioEntidad,EstadoServicios,IdMigrantes,TipoDeUsuario")] MigranteServicio migranteServicio)
         {
             if (id != migranteServicio.IdMigranteServicio)
             {

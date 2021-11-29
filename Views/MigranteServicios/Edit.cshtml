@@ -16,27 +16,34 @@
             <input type="hidden" asp-for="IdMigranteServicio" />
             <div class="form-group">
                 <label asp-for="Detalle" class="control-label"></label>
-                <input asp-for="Detalle" class="form-control" />
+                <input asp-for="Detalle" class="form-control"disabled />
                 <span asp-validation-for="Detalle" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Fecha" class="control-label"></label>
-                <input asp-for="Fecha" class="form-control" />
+                <input asp-for="Fecha " class="form-control" disabled/>
                 <span asp-validation-for="Fecha" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="IdServicioEntidad" class="control-label"></label>
-                <select asp-for="IdServicioEntidad" class="form-control" asp-items="ViewBag.IdServicioEntidad"></select>
+                <select asp-for="IdServicioEntidad" class="form-control" asp-items="ViewBag.IdServicioEntidad" disabled></select>
                 <span asp-validation-for="IdServicioEntidad" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="EstadoServicios" class="control-label"></label>
-                <input asp-for="EstadoServicios" class="form-control" />
+                <select asp-for="EstadoServicios" class="form-control">
+                  <option disabled>En Espera</option>
+                  <option >Autorizado</option>
+                  <option >Activo</option>
+                  <option >Rechazado</option>
+                  <option disabled>Cancelado</option>
+                  <option >Negado por la entidad</option>
+                </select>
                 <span asp-validation-for="EstadoServicios" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="IdMigrantes" class="control-label"></label>
-                <select asp-for="IdMigrantes" class="form-control" asp-items="ViewBag.IdMigrantes"></select>
+                <select asp-for="IdMigrantes" class="form-control" asp-items="ViewBag.IdMigrantes" disabled></select>
                 <span asp-validation-for="IdMigrantes" class="text-danger"></span>
             </div>
             <div class="form-group">

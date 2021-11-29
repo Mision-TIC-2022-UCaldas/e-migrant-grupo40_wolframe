@@ -27,7 +27,7 @@ namespace proyecto.Controllers
         }
 
         // GET: SuplirNecesidads/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? id,string? id2)
         {
             if (id == null)
             {
@@ -36,7 +36,7 @@ namespace proyecto.Controllers
 
             var suplirNecesidad = await _context.SuplirNecesidad
                 .Include(s => s.Migrantes)
-                .Include(s => s.Servicios)
+                .Include(s => s.Servicios.Estado=="Activo")
                 .FirstOrDefaultAsync(m => m.IdMigranteServicio == id);
             if (suplirNecesidad == null)
             {
@@ -59,25 +59,37 @@ namespace proyecto.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdMigranteServicio,Detalle,Fecha,IdServicioEntidad,EstadoServicios,IdMigranteNecesidad")] SuplirNecesidad suplirNecesidad)
+        public async Task<IActionResult> Create([Bind("IdMigranteServicio,Detalle,Fecha,IdServicioEntidad,EstadoServicios,IdMigranteNecesidad,TipoDeUsuario")] SuplirNecesidad suplirNecesidad)
         {
             
 
             if (ModelState.IsValid)
             {
-                /*MigranteServicio migranteServicio = new MigranteServicio
-                * {Fecha=suplirNecesidad.Fecha,
-                * Detalle=EsuplirNecesidad.Detalle,
-                * IdServicioEntidad=suplirNecesidad.IdServicioEntidad
-                * EstadoServicios=suplirNecesidad.EstadoServicios,
-                * IdMigrantes=IdMigranteNecesidad};
+                MigranteNecesidad sp = (
+                                     from su in _context.SuplirNecesidad
+                                     join nm in _context.MigranteNecesidad on su.IdMigranteNecesidad equals nm.IdMigranteNecesidad
+                                     where nm.IdMigranteNecesidad == suplirNecesidad.IdMigranteNecesidad
+                                     select new MigranteNecesidad()
+                                     {
+                                         IdMigrante = nm.IdMigrante,
+                                         Necesidad= nm.Necesidad,
+                                     }).FirstOrDefault();
 
-                 if(suplirNecesidad.EstadoServicios=="" || suplirNecesidad.EstadoServicios=="" )
-                   {
-                        _context.MigranteServicio.add(migranteServicio);
-                    }  
 
-                 */
+                MigranteServicio migranteServicio = new MigranteServicio                
+                {
+                    Fecha = suplirNecesidad.Fecha,
+                    Detalle = suplirNecesidad.Detalle,
+                    IdServicioEntidad = suplirNecesidad.IdServicioEntidad,
+                    EstadoServicios = suplirNecesidad.EstadoServicios,
+                    IdMigrantes = sp.IdMigrante
+                };
+
+                if (suplirNecesidad.EstadoServicios == "En Espera")
+                {
+                    _context.MigranteServicio.Add(migranteServicio);
+                    await _context.SaveChangesAsync();
+                }
 
                 _context.Add(suplirNecesidad);
                 await _context.SaveChangesAsync();
@@ -114,7 +126,7 @@ namespace proyecto.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdMigranteServicio,Detalle,Fecha,IdServicioEntidad,EstadoServicios,IdMigranteNecesidad")] SuplirNecesidad suplirNecesidad)
+        public async Task<IActionResult> Edit(int id, [Bind("IdMigranteServicio,Detalle,Fecha,IdServicioEntidad,EstadoServicios,IdMigranteNecesidad,TipoDeUsuario")] SuplirNecesidad suplirNecesidad)
         {
             if (id != suplirNecesidad.IdMigranteServicio)
             {
@@ -125,6 +137,31 @@ namespace proyecto.Controllers
             {
                 try
                 {
+                    MigranteNecesidad sp = (
+                                    from su in _context.SuplirNecesidad
+                                    join nm in _context.MigranteNecesidad on su.IdMigranteNecesidad equals nm.IdMigranteNecesidad
+                                    where nm.IdMigranteNecesidad == suplirNecesidad.IdMigranteNecesidad
+                                    select new MigranteNecesidad()
+                                    {
+                                        IdMigrante = nm.IdMigrante,
+                                        Necesidad = nm.Necesidad,
+                                    }).FirstOrDefault();
+                        
+                        MigranteServicio migranteServicio = new MigranteServicio
+                        {
+                            Fecha = suplirNecesidad.Fecha,
+                            Detalle = suplirNecesidad.Detalle,
+                            IdServicioEntidad = suplirNecesidad.IdServicioEntidad,
+                            EstadoServicios = suplirNecesidad.EstadoServicios,
+                            IdMigrantes = sp.IdMigrante
+                        };
+
+                        if (suplirNecesidad.EstadoServicios == "Cancelado")
+                        {
+                            _context.MigranteServicio.Update(migranteServicio);
+                            await _context.SaveChangesAsync();
+                        }
+
                     _context.Update(suplirNecesidad);
                     await _context.SaveChangesAsync();
                 }

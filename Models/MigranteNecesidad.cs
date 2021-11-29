@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace proyecto.Models { 
@@ -17,5 +18,10 @@ namespace proyecto.Models {
         [ForeignKey("IdMigrante")]
         public migrantes Migrantes { get; set; }
         public string Detalle { get; set; }
+
+        public static implicit operator int(MigranteNecesidad v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

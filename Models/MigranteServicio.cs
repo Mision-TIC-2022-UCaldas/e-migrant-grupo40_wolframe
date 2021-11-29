@@ -21,6 +21,8 @@ namespace proyecto.Models
 
         [Required]
         public string EstadoServicios { get; set; }
+        [Required]
+        public string TipoDeUsuario { get; set; }
 
         [Required]
         public int IdMigrantes { get; set; }
